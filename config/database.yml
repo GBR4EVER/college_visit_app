@@ -1,0 +1,7 @@
+development:
+	database: college_visit_app.db
+	adapter: sqlite3
+	
+test:
+	database: college_visit_app_spec.db
+	adapter: sqlite3
