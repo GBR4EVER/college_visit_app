@@ -12,6 +12,7 @@ require_relative "./models/college.rb"
 
 $db = SQLite3::Database.new "college_visit_app.db"
 $db.results_as_hash = true
+
 require_relative "./student.rb"
 
 
