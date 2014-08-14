@@ -6,7 +6,7 @@ require "sinatra/activerecord"
 
 require "sqlite3"
 
-require_relative "./models/studen.rb"
+require_relative "./models/student.rb"
 require_relative "./models/scholarship.rb"
 require_relative "./models/college.rb"
 
