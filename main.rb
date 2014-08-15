@@ -10,8 +10,6 @@ require_relative "./models/student.rb"
 require_relative "./models/scholarship.rb"
 require_relative "./models/college.rb"
 
-require "college_visit_app"
-
 
 get "/" do
   @students = Student.all # This is a class-method that we made.
