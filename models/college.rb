@@ -17,15 +17,15 @@ class College < ActiveRecord::Base
     b << latitude
     b << longitude
     Geocoder.coordinates(b)
-   end
+  end
  
- def coords
-   a = Geocoder.coordinates(name)
-   lat = a[0]
-   long = a[1]
-   update(latitude: lat)
-   update(longitude: long)
-   end
+  def coords
+    a = Geocoder.coordinates(name)
+    lat = a[0]
+    long = a[1]
+    update(latitude: lat)
+    update(longitude: long)
+  end
 end
 
 binding.pry
