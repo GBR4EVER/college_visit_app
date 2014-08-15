@@ -16,4 +16,9 @@ get "/" do
   erb :home
 end
 
+get "/search" do
+  @address = College.all
+  erb :search
+end
+
 binding.pry

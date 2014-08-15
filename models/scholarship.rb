@@ -1,5 +1,5 @@
 
 class Scholarship < ActiveRecord::Base
-  belongs_to :student
-  belongs_to :college
+  belongs_to :students
+  belongs_to :colleges
 end
