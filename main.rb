@@ -18,7 +18,7 @@ get "/" do
 end
 
 get "/search" do
-  @college = College.all
+  @colleges = College.all
   erb :search
 end
 
