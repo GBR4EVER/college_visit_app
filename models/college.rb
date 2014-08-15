@@ -1,3 +1,4 @@
+require "pry"
 
 class College < ActiveRecord::Base
   has_many :scholarships
@@ -5,7 +6,7 @@ class College < ActiveRecord::Base
   
   extend Geocoder::Model::ActiveRecord
   
-  reverse_geocoded_by :address
+  geocoded_by :address
   after_validation :geocode, :if => :address_changed?
   
   def initialize
@@ -25,7 +26,6 @@ class College < ActiveRecord::Base
    update(latitude: lat)
    update(longitude: long)
    end
- end
-
 end
 
+binding.pry
