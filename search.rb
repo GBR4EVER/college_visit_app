@@ -25,14 +25,16 @@ class Search < ActiveRecord::Base
 
   def resource(resource)
     @resource = case resource
+    when 'college_id'
+      '/search/college_id'
     when 'school'
       '/search/school'
-    when 'region'
-      '/search/region'
     when 'state'
       '/search/state'
     when 'city'
       '/search/city'
+    when 'address'
+      '/search/address'
     end
     self
   end
