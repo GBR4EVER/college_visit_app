@@ -12,7 +12,7 @@ require_relative "./models/scholarship.rb"
 require_relative "./models/college.rb"
 
 
-get "/" do
+get "/home" do
   @students = Student.all # This is a class-method that we made.
   erb :home
 end
