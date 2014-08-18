@@ -1,25 +1,51 @@
-<h2> University of Nebraska </h2>
+<h2> Division 1 schools </h2>
 
 <% @colleges.each do |u| %>  
   
+<p>  
+  <strong> Institution: </strong>  
+  <%= u.school %>  
+</p>
+
 <p>
-<img src="http://siliconangle.com/files/2012/05/university-of-nebraska-294x300.png<%= u.logo %>" />
+<img src="http://www.matchcollege.com/images/college_logos/tn_w150-h60-200800_213.png<%= u.logo %>" />
 </p>
 
 <p>  
-  <strong>Mascot:</strong>  
-  <%= u.mascot %>  
+  <strong>Nickname:</strong>  
+  <%= u.nickname %>  
+</p>  
+
+<p>  
+  <strong>Home Page:</strong>  
+  <%= u.webpage %>  
+</p> 
+
+<p>  
+  <strong>Summary:</strong>  
+  <%= u.bio %>  
+</p>  
+
+<p>  
+  <strong>Estimated Tuition (2 semesters):</strong>  
+  <%= u.tuition %>  
 </p>  
 
 <p>  
   <strong>Address:</strong>  
   <%= u.address %>  
-</p>  
+</p> 
 
 <p>  
-  <strong>Tuition:</strong>  
-  <%= u.tuition %>  
-</p> 
+  <strong>Latitude and Longitude:</strong>  
+  <%= u.latitude %> - <%= u.longitude %>  
+</p>
+
+<p>  
+  <strong>Region:</strong>  
+  <%= u.region %>  
+</p>  
+
 
 <% end %>
 
