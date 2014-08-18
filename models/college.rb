@@ -4,11 +4,10 @@ class College < ActiveRecord::Base
   has_many :scholarships
   has_and_belongs_to_many :students
   
-  attr_accessor :address, :latitude, :longitude
   
   extend Geocoder::Model::ActiveRecord
   
-  geocoded_by :address
+  geocoded_by :school
   after_validation :geocode, :if => :address_changed?
   
   
@@ -20,7 +19,7 @@ class College < ActiveRecord::Base
   end
  
   def coords
-    a = Geocoder.coordinates(name)
+    a = Geocoder.coordinates(school)
     lat = a[0]
     long = a[1]
     update(latitude: lat)
