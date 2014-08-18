@@ -18,7 +18,7 @@ class Search < ActiveRecord::Base
     self
   end
 
-  def city(cit)
+  def city(city)
     @params[:city] = "#{city}"
     self
   end
