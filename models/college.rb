@@ -4,13 +4,13 @@ class College < ActiveRecord::Base
   has_many :scholarships
   has_and_belongs_to_many :students
   
+  attr_accessor :address, :latitude, :longitude
+  
   extend Geocoder::Model::ActiveRecord
   
   geocoded_by :address
   after_validation :geocode, :if => :address_changed?
   
-  def initialize
-  end
   
   def location
     b = []
