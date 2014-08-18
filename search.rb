@@ -33,14 +33,6 @@ class Search < ActiveRecord::Base
       '/search/state'
     when 'city'
       '/search/city'
-    when 'conference'
-      '/search/conference'
-    when 'public'
-      '/search/company'
-    when 'private'
-      '/search/keyword'
-    when 'find'
-      '/find'
     end
     self
   end

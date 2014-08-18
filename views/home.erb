@@ -12,20 +12,13 @@ body {
 </style>
 
 <body>
-<% @students.each do |u| %>
-	<%#
-	So here, `u` is a User object (meaning it's an *instance* of the
-	Student class). So we can run *instance* methods on `u`.
-	%>
-<p>
-	<%= u.name %> - <%= u.age %>
-</p>
-
-<% end %>
-
-<p>
-	<form action="/search">
-		<p> search: <input type="text" name="query"> </p>
+	<h1>Search</h1>
+ 	<form action="/search" method="get">
+		<p>
+			<input type="Enter Institution" name="query"></input>
+		</p>
 	</form>
-</p>
+
+
 </body>
+
