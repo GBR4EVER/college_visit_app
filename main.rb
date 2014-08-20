@@ -68,7 +68,7 @@ end
 
 #CREATE
 get "/colleges/create" do
-  @college = College.create({college_id: params[:college_id], school: params[:school], nickname: params[:nickname] bio: params[:bio], tuition: params[:tuition], logo: params[:logo], address: params[:address], region: params[:region], webpage: params[:webpage]})
+  @college = College.create({school: params[:school], nickname: params[:nickname] bio: params[:bio], tuition: params[:tuition], logo: params[:logo], address: params[:address], region: params[:region], webpage: params[:webpage]})
   erb :college_create
 end
 
@@ -97,6 +97,7 @@ get "/colleges/:college_id" do
   erb :college_show
 end
 
+binding.pry
 #-----------Scholarships-----------#
 
 
