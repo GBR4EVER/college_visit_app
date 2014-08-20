@@ -53,6 +53,7 @@ get "/students/:id" do
   erb :student_show
 end
 
+binding.pry
 #-------Colleges---------#
 
 # INDEX
