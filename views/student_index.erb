@@ -10,6 +10,17 @@ body {
 	background-color: #6699FF;
 }
 </style>
+<p>
+	<a href="/students/new">Add new user</a>
+</p>
+
+<% @all_students.each do |s| %>
+
+<p>
+	<a href= "/students/"><%= u.id %>"><%= u.name %></a> - <%= u.age %>
+</p>
+
+<% end %>
 
 <body>
 	<h1>Search</h1>
