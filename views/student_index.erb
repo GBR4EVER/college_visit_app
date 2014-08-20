@@ -16,9 +16,7 @@ body {
 contains mirrored info from one row in the "users" database table.
 
 The benefit of storing the info from each row in an object is that we can
-write methods for the object's class (User). For example, below we wrote
-a `party_time` method that uses the 'age' attribute to see if someone can
-drink [alcohol] or not.
+write methods for the object's class (User).
 
 %>
 
@@ -32,7 +30,7 @@ drink [alcohol] or not.
 	 User class). So we can run *instance* methods on `u`.
 	%>
 <p>
-	<a href= "/students/><%= u.id %>"><%= u.name %></a> - <%= u.age %>
+	<a href= "/students/<%= u.id %>"><%= u.name %></a> - <%= u.age %>
 </p>
 
 <% end %>

@@ -1,14 +1,37 @@
+<style>
+h1 {
+	font-family: Verdana;
+	color:  #FFCC33;
+	text-align: center;
+}
+
+body {
+	text-align: center;
+	background-color: #6699FF;
+}
+</style>
+
+<%#
+
+@all_colleges contains an Array of User objects. Remember that a User object
+contains mirrored info from one row in the "users" database table.
+
+The benefit of storing the info from each row in an object is that we can
+write methods for the object's class (College).
+
+%>
+
 <p>
 	<a href="/colleges/new">Add new college</a>
 </p>
 
 <% @all_colleges.each do |c| %>
 	<%#
-	 So here, `u` is a User object (meaning it's an *instance* of the
-	 User class). So we can run *instance* methods on `u`.
+	 So here, `c` is a User object (meaning it's an *instance* of the
+	 User class). So we can run *instance* methods on `c`.
 	%>
 <p>
-	<a href= "/colleges/><%= c.college_id %>"><%= c.school %> - <%= c.nickname %> - <%= c.bio %> - <%= c.tuition %> - <%= c.address %> - <%= c.latitude %> - <%= c.longitude %> - <%= c.region %> - <%= c.webpage %></a>
+	<a href= "/colleges/<%= c.college_id %>"><%= c.school %> - <%= c.nickname %> - <%= c.bio %> - <%= c.tuition %> - <%= c.address %> - <%= c.latitude %> - <%= c.longitude %> - <%= c.region %> - <%= c.webpage %></a>
 </p>
 
 <% end %>
