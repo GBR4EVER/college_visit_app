@@ -23,7 +23,7 @@ get "/students/new" do
 end
 
 #CREATE
-get "/students/create" do
+post "/students/create" do
   @student = Student.create({name: params[:name], age: params[:age]})
   erb :student_create
 end
@@ -69,7 +69,7 @@ end
 
 #CREATE
 get "/colleges/create" do
-  @college = College.create({school: params[:school], nickname: params[:nickname] bio: params[:bio], tuition: params[:tuition], logo: params[:logo], address: params[:address], region: params[:region], webpage: params[:webpage]})
+  @college = College.create({school: params[:school], nickname: params[:nickname], bio: params[:bio], tuition: params[:tuition], logo: params[:logo], address: params[:address], region: params[:region], webpage: params[:webpage]})
   erb :college_create
 end
 
@@ -82,7 +82,7 @@ end
 #UPDATE
 post "/colleges/:college_id/update" do
   @college = College.find(params[:college_id])
-  @college.update.attributes({{college_id: params[:college_id], school: params[:school], nickname: params[:nickname] bio: params[:bio], tuition: params[:tuition], logo: params[:logo], address: params[:address], region: params[:region], webpage: params[:webpage]})
+  @college.update.attributes({college_id: params[:college_id], school: params[:school], nickname: params[:nickname], bio: params[:bio], tuition: params[:tuition], logo: params[:logo], address: params[:address], region: params[:region], webpage: params[:webpage]})
   erb :college_update
 end
 
