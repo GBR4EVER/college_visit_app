@@ -1,9 +1,23 @@
 <h1>New Student</h1>
 
+<!--
+	The request created by this form's submission will go to
+	"/users/create" and the HTTP verb will be "post".
+-->
+
 <form action="/student/create" method="post">
 	<p>Name: <input type="text" name="name"></p>
 	
 	<p>Age: <input type="text" name="age"></p>
-	
+	<!--
+	 The values that this form submits will be stored in a
+	 Ruby Hash called `params`. Like any Hash, you can get the
+	 values by accessing a "key" in the Hash.
+	 For example, you'll be able to do `params[:name]` or
+	 `params[:age]`. But you can't do that yet! We have to submit
+	 the form first.
+	-->	
 	<input type="submit">
 </form>
+
+
