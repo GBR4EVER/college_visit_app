@@ -17,24 +17,24 @@ get "/students/index" do
   erb :student_index
 end
 
-#NEW
+# NEW
 get "/students/new" do
   erb :student_new
 end
 
-#CREATE
+# CREATE
 post "/students/create" do
   @students = Student.create({name: params[:name], age: params[:age]})
   erb :student_create
 end
 
-#EDIT
+# EDIT
 get "/students/:id/edit" do
   @students = Student.find(params[:id])
   erb :student_edit
 end
 
-#UPDATE
+# UPDATE
 post "/students/:id/update" do
   @students = Student.find(params[:id])
   @students.update_attributes({name: params[:name], age: params[:age]})
@@ -99,37 +99,37 @@ get "/colleges/:college_id" do
 end
 
 binding.pry
-#-----------Student(s) with College(s)-----------#
-
-# INDEX
-get "students/:student_id/colleges" do
-  @student = Student.find(params[:id])
-  @all_colleges = @student.colleges
-  erb :colleges_index
-end
-
-# NEW
-get "students/:student_id/new_colleges" do
-  @student = Student.find(params[:id])
-  erb :college_new
-end
-
-get "/colleges/new_student_plus" do
-  erb :colleges_plus_new_student
-end
-
-# CREATE
-get "/colleges/:student_id/create_college" do
-  @colleges = College.create({name: params[:name], student_id: params[:student_id]})
-  erb :colleges_create
-end
-
-# EDIT
-
-# UPDATE
-
-# DELETE
-
-# SHOW
+# #-----------Student(s) with College(s)-----------#
+#
+# # INDEX
+# get "students/:student_id/colleges" do
+#   @student = Student.find(params[:id])
+#   @all_colleges = @student.colleges
+#   erb :colleges_index
+# end
+#
+# # NEW
+# get "students/:student_id/new_colleges" do
+#   @student = Student.find(params[:id])
+#   erb :college_new
+# end
+#
+# get "/colleges/new_student_plus" do
+#   erb :colleges_plus_new_student
+# end
+#
+# # CREATE
+# get "/colleges/:student_id/create_college" do
+#   @colleges = College.create({name: params[:name], student_id: params[:student_id]})
+#   erb :colleges_create
+# end
+#
+# # EDIT
+#
+# # UPDATE
+#
+# # DELETE
+#
+# # SHOW
   
 
