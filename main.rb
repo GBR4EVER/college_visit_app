@@ -8,48 +8,48 @@ require "sqlite3"
 require "geocoder"
 
 require_relative "./models/student.rb"
-require_relative "./models/scholarship.rb"
+require_relative "./models/review.rb"
 require_relative "./models/college.rb"
 
 # INDEX
-get "/students/index" do
+get "/student/index" do
   @all_students = Student.all # This is a class-method that we made.
   erb :student_index
 end
 
 # NEW
-get "/students/new" do
+get "/student/new" do
   erb :student_new
 end
 
 # CREATE
-post "/students/create" do
-  @students = Student.create({name: params[:name], age: params[:age]})
+post "/student/create" do
+  @student = Student.create({name: params[:name], age: params[:age]})
   erb :student_create
 end
 
 # EDIT
-get "/students/:id/edit" do
-  @students = Student.find(params[:id])
+get "/student/:id/edit" do
+  @student = Student.find(params[:id])
   erb :student_edit
 end
 
 # UPDATE
-post "/students/:id/update" do
-  @students = Student.find(params[:id])
-  @students.update_attributes({name: params[:name], age: params[:age]})
+post "/student/:id/update" do
+  @student = Student.find(params[:id])
+  @student.update_attributes({name: params[:name], age: params[:age]})
   erb :student_update
 end
 
 #DELETE - Most of the time your delete will be a 'post' route.
 get "/students/:id/delete" do
-  @students = Student.find(params[:id]).delete
+  @student = Student.find(params[:id]).delete
   erb :student_delete
 end
 
 # SHOW
 get "/students/:id" do
-  @students = Student.find(params[:id])
+  @student = Student.find(params[:id])
   erb :student_show
 end
 
