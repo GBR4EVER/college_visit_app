@@ -24,26 +24,26 @@ end
 
 #CREATE
 post "/students/create" do
-  @student = Student.create({name: params[:name], age: params[:age]})
+  @students = Student.create({name: params[:name], age: params[:age]})
   erb :student_create
 end
 
 #EDIT
 get "/students/:id/edit" do
-  @student = Student.find(params[:id])
+  @students = Student.find(params[:id])
   erb :student_edit
 end
 
 #UPDATE
 post "/students/:id/update" do
-  @student = Student.find(params[:id])
-  @student.update.attributes({name: params[:name], age: params[:age]})
+  @students = Student.find(params[:id])
+  @students.update_attributes({name: params[:name], age: params[:age]})
   erb :student_update
 end
 
 #DELETE - Most of the time your delete will be a 'post' route.
 get "/students/:id/delete" do
-  @student = Student.find(params[:id]).delete
+  @students = Student.find(params[:id]).delete
   erb :student_delete
 end
 
@@ -82,7 +82,7 @@ end
 #UPDATE
 post "/colleges/:college_id/update" do
   @college = College.find(params[:college_id])
-  @college.update.attributes({college_id: params[:college_id], school: params[:school], nickname: params[:nickname], bio: params[:bio], tuition: params[:tuition], logo: params[:logo], address: params[:address], region: params[:region], webpage: params[:webpage]})
+  @college.update_attributes({college_id: params[:college_id], school: params[:school], nickname: params[:nickname], bio: params[:bio], tuition: params[:tuition], logo: params[:logo], address: params[:address], region: params[:region], webpage: params[:webpage]})
   erb :college_update
 end
 
@@ -99,6 +99,37 @@ get "/colleges/:college_id" do
 end
 
 binding.pry
-#-----------Scholarships-----------#
+#-----------Student(s) with College(s)-----------#
 
+# INDEX
+get "students/:student_id/colleges" do
+  @student = Student.find(params[:id])
+  @all_colleges = @student.colleges
+  erb :colleges_index
+end
+
+# NEW
+get "students/:student_id/new_colleges" do
+  @student = Student.find(params[:id])
+  erb :college_new
+end
+
+get "/colleges/new_student_plus" do
+  erb :colleges_plus_new_student
+end
+
+# CREATE
+get "/colleges/:student_id/create_college" do
+  @colleges = College.create({name: params[:name], student_id: params[:student_id]})
+  erb :colleges_create
+end
+
+# EDIT
+
+# UPDATE
+
+# DELETE
+
+# SHOW
+  
 

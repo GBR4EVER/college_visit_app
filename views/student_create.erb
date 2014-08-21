@@ -1,5 +1,12 @@
+<% if @students.valid? %>
 <h1>Success!</h1>
 
-<p>Made a new student with a name<%= @student.name %></p>
+<p>Made a new student with the name <%= @students.name %></p>
 
 <a href="/students/index">Return to main list</a>
+
+<% else %>
+
+Please enter the fields.
+
+<% end %>
