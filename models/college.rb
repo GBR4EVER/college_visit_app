@@ -1,7 +1,7 @@
 require "pry"
 
 class College < ActiveRecord::Base
-  has_many :scholarships
+  has_many :reviews
   has_and_belongs_to_many :students
   
   # 'extend' is initializing our Geocoder gem to run within the College class.

@@ -1,7 +1,7 @@
 <h1>Edit College</h1>
 
 <form action="/colleges/<%= @college.college_id %>/update" method="post">
-	<p>Institution Name: <input type="text" name="school"></p>
+	<p>Institution Name: <input type="text" name="school" value="<%= @college.school %>"></p>
 	
 	<p>Nickname(mascot): <input type="text" name="nickname"></p>
 	
@@ -9,7 +9,7 @@
 	
 	<p>Summary: <input type="text" name="bio"></p>
 	
-	<p>Address: <input type="text" name="address"></p>
+	<p>Address: <input type="text" name="address" value="<%= @college.address %>"></p>
 	
 	<p>Latitude: <input type="text" name="latitude"></p>
 	
