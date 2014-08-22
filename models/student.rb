@@ -6,4 +6,7 @@ class Student < ActiveRecord::Base
   validates :name, length: { minimum: 2}
   validates :age, length: { maximum: 3}
   validates :age, numericality: { only_integer: true }
+
 end
+
+

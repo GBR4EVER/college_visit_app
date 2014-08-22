@@ -12,30 +12,30 @@ require_relative "./models/review.rb"
 require_relative "./models/college.rb"
 
 # INDEX
-get "/student/index" do
+get "/students/index" do
   @all_students = Student.all # This is a class-method that we made.
   erb :student_index
 end
 
 # NEW
-get "/student/new" do
+get "/students/new" do
   erb :student_new
 end
 
 # CREATE
-post "/student/create" do
+post "/students/create" do
   @student = Student.create({name: params[:name], age: params[:age]})
   erb :student_create
 end
 
 # EDIT
-get "/student/:id/edit" do
+get "/students/:id/edit" do
   @student = Student.find(params[:id])
   erb :student_edit
 end
 
 # UPDATE
-post "/student/:id/update" do
+post "/students/:id/update" do
   @student = Student.find(params[:id])
   @student.update_attributes({name: params[:name], age: params[:age]})
   erb :student_update
