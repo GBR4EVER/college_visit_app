@@ -68,7 +68,7 @@ get "/colleges/new" do
 end
 
 #CREATE
-get "/colleges/create" do
+post "/colleges/create" do
   @college = College.create({school: params[:school], nickname: params[:nickname], bio: params[:bio], tuition: params[:tuition], logo: params[:logo], address: params[:address], region: params[:region], webpage: params[:webpage]})
   erb :college_create
 end

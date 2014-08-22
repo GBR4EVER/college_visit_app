@@ -1,5 +1,7 @@
 <h1>Success!</h1>
 
-<p>Made a new college with a name<%= @college.school %></p>
+<p>Made a new college: <%= @college.school %> - <%= @college.nickname %></p>
 
 <a href="/colleges/index">Return to college list</a>
+
+<a href="/colleges/<%= @college.college_id %>/edit">Edit this college.</a>
