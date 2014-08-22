@@ -1,12 +1,3 @@
-require "pry"
-
-require "sinatra"
-require "sinatra/reloader"
-require "sinatra/activerecord"
-
-require "sqlite3"
-require "geocoder"
-
 require_relative "./models/student.rb"
 require_relative "./models/review.rb"
 require_relative "./models/college.rb"
