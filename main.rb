@@ -1,3 +1,7 @@
+require "rubygems"
+require "bundler"
+Bundler.require
+
 require_relative "./models/student.rb"
 require_relative "./models/review.rb"
 require_relative "./models/college.rb"
@@ -60,32 +64,32 @@ end
 
 #CREATE
 post "/colleges/create" do
-  @college = College.create({school: params[:school], nickname: params[:nickname], bio: params[:bio], tuition: params[:tuition], logo: params[:logo], address: params[:address], region: params[:region], webpage: params[:webpage]})
+  @college = College.create({school: params[:school], nickname: params[:nickname], tuition: params[:tuition], bio: params[:bio], address: params[:address], latitude: params[:longitude], longitude: params[:longitude], region: params[:region]})
   erb :college_create
 end
 
 #EDIT
-get "/colleges/:college_id/edit" do
-  @college = College.find(params[:college_id])
+get "/colleges/:id/edit" do
+  @college = College.find(params[:id])
   erb :college_edit
 end
 
 #UPDATE
-post "/colleges/:college_id/update" do
-  @college = College.find(params[:college_id])
-  @college.update_attributes({college_id: params[:college_id], school: params[:school], nickname: params[:nickname], bio: params[:bio], tuition: params[:tuition], logo: params[:logo], address: params[:address], region: params[:region], webpage: params[:webpage]})
+post "/colleges/:id/update" do
+  @college = College.find(params[:id])
+  @college.update_attributes({school: params[:school], nickname: params[:nickname], tuition: params[:tuition], bio: params[:bio], address: params[:address], latitude: params[:longitude], longitude: params[:longitude], region: params[:region]})
   erb :college_update
 end
 
 #DELETE - Most of the time your delete will be a 'post' route.
-get "/colleges/:college_id/delete" do
-  @college = College.find(params[:college_id]).delete
+get "/colleges/:id/delete" do
+  @college = College.find(params[:id]).delete
   erb :college_delete
 end
 
 # SHOW
-get "/colleges/:college_id" do
-  @colleges = College.find(params[:college_id])
+get "/colleges/:id" do
+  @college = College.find(params[:id])
   erb :college_show
 end
 
