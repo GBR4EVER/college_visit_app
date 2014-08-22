@@ -6,6 +6,8 @@ require_relative "./models/student.rb"
 require_relative "./models/review.rb"
 require_relative "./models/college.rb"
 
+#-----------Students---------------#
+
 # INDEX
 get "/students/index" do
   @all_students = Student.all # This is a class-method that we made.
@@ -49,7 +51,8 @@ get "/students/:id" do
 end
 
 binding.pry
-#-------Colleges---------#
+
+#-------------College----------#
 
 # INDEX
 get "/colleges/index" do

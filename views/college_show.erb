@@ -1,5 +1,12 @@
 <h1><%= @college.school %> Details</h1>
 
+<body>
+	<ul>Nickname: <%= @college.nickname %></ul>
+	<ul>Summary: <%= @college.bio %></ul>
+	<ul>Estimated Tuition (2 semesters): <%= @college.tuition %></ul>
+	<ul>Location: <%= @college.address %></ul>
+</body>
+
 <a href="/colleges/<%= @college.id %>/edit">Edit this college.</a>
 
 <a href="/colleges/<%= @college.id %>/delete">Delete this college.</a>
