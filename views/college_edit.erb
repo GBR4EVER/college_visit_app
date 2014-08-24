@@ -3,21 +3,21 @@
 <form action="/colleges/<%= @college.college_id %>/update" method="post">
 	<p>Institution Name: <input type="text" name="school" value="<%= @college.school %>"></p>
 	
-	<p>Nickname(mascot): <input type="text" name="nickname"></p>
+	<p>Nickname(mascot): <input type="text" name="nickname" value="<%= @college.nickname %>"></p>
 	
-	<p>Estimated Tuition: <input type="text" name="tuition"></p>
+	<p>Estimated Tuition: <input type="text" name="tuition" value="<%= @college.tuition %>"></p>
 	
-	<p>Summary: <input type="text" name="bio"></p>
+	<p>Summary: <input type="text" name="bio" value="<%= @college.bio %>"></p>
 	
 	<p>Address: <input type="text" name="address" value="<%= @college.address %>"></p>
 	
-	<p>Latitude: <input type="text" name="latitude"></p>
+	<p>Latitude: <input type="text" name="latitude" value="<%= @college.latitude %>"></p>
 	
-	<p>Longitude: <input type="text" name="longitude"></p>
+	<p>Longitude: <input type="text" name="longitude" value="<%= @college.longitude %>"></p>
 	
-	<p>Region: <input type="text" name="region"></p>
+	<p>Region: <input type="text" name="region" value="<%= @college.region %>"></p>
 	
-	<p>Institution's Homepage: <input type="text" name="webpage"></p>
+	<p>Institution's Homepage: <input type="text" name="webpage" value="<%= @college.webpage %>"></p>
 	
 	<input type="submit">
 </form>
