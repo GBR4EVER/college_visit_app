@@ -97,8 +97,8 @@ get "/colleges/:id" do
 end
 
 binding.pry
-# #-----------Student(s) with College(s)-----------#
-#
+#-----------Student(s) with College(s)-----------#
+
 # # INDEX
 # get "students/:student_id/colleges" do
 #   @student = Student.find(params[:id])
@@ -129,5 +129,5 @@ binding.pry
 # # DELETE
 #
 # # SHOW
-  
+
 
