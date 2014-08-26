@@ -5,6 +5,8 @@ Bundler.require
 require_relative "./models/student.rb"
 require_relative "./models/review.rb"
 require_relative "./models/college.rb"
+require_relative "./routes/students.rb"
+require_relative "./routes/colleges.rb"
 
 #-----------Students---------------#
 
