@@ -5,8 +5,8 @@ Bundler.require
 require_relative "./models/student.rb"
 require_relative "./models/review.rb"
 require_relative "./models/college.rb"
-require_relative "./routes/students.rb"
-require_relative "./routes/colleges.rb"
+require_relative "./routes/route_student.rb"
+require_relative "./routes/route_college.rb"
 
 #-----------Students---------------#
 
@@ -101,35 +101,35 @@ end
 binding.pry
 #-----------Student(s) with College(s)-----------#
 
-# INDEX
-get "students/:student_id/colleges" do
-  @student = Student.find(params[:id])
-  @all_colleges = @student.colleges
-  erb :colleges_index
-end
-
-# NEW
-get "students/:student_id/new_colleges" do
-  @student = Student.find(params[:id])
-  erb :college_new
-end
-
-get "/colleges/new_student_plus" do
-  erb :colleges_plus_new_student
-end
-
-# CREATE
-get "/colleges/:student_id/create_college" do
-  @colleges = College.create({name: params[:name], student_id: params[:student_id]})
-  erb :colleges_create
-end
-
-# EDIT
-
-# UPDATE
-
-# DELETE
-
-# SHOW
-
-
+# # INDEX
+# get "students/:student_id/colleges" do
+#   @student = Student.find(params[:id])
+#   @all_colleges = @student.colleges
+#   erb :colleges_index
+# end
+#
+# # NEW
+# get "students/:student_id/new_colleges" do
+#   @student = Student.find(params[:id])
+#   erb :college_new
+# end
+#
+# get "/colleges/new_student_plus" do
+#   erb :colleges_plus_new_student
+# end
+#
+# # CREATE
+# get "/colleges/:student_id/create_college" do
+#   @colleges = College.create({name: params[:name], student_id: params[:student_id]})
+#   erb :colleges_create
+# end
+#
+# # EDIT
+#
+# # UPDATE
+#
+# # DELETE
+#
+# # SHOW
+#
+#
