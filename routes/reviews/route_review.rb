@@ -1,6 +1,5 @@
 # INDEX
 get "/reviews/index" do
-  @review = Review.find(params[:id])
   @all_reviews = @review.all
   erb :review_index
 end
