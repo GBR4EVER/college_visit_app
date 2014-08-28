@@ -99,37 +99,49 @@ get "/colleges/:id" do
 end
 
 binding.pry
-#-----------Student(s) with College(s)-----------#
 
-# # INDEX
-# get "students/:student_id/colleges" do
-#   @student = Student.find(params[:id])
-#   @all_colleges = @student.colleges
-#   erb :colleges_index
-# end
-#
-# # NEW
-# get "students/:student_id/new_colleges" do
-#   @student = Student.find(params[:id])
-#   erb :college_new
-# end
-#
-# get "/colleges/new_student_plus" do
-#   erb :colleges_plus_new_student
-# end
-#
-# # CREATE
-# get "/colleges/:student_id/create_college" do
-#   @colleges = College.create({name: params[:name], student_id: params[:student_id]})
-#   erb :colleges_create
-# end
-#
-# # EDIT
-#
-# # UPDATE
-#
-# # DELETE
-#
-# # SHOW
-#
-#
+#-----------Review-----------#
+
+# INDEX
+get "/reviews/index" do
+  @review = Review.find(params[:id])
+  @all_reviews = @review.all
+  erb :review_index
+end
+
+# NEW
+get "/reviews/new" do
+  erb :review_new
+end
+
+# CREATE
+get "/reviews/create" do
+  @review = Review.create({rating: params[:rating], content: params[:content]})
+  erb :review_create
+end
+
+# EDIT
+get "/reviews/:id/edit" do
+  @review = Review.find(params[:id])
+  erb :review_edit
+end
+
+# UPDATE
+get "/reviews/:id/update" do
+  @review = Review.find(params[:id])
+  @review.update_attributes({rating: params[:rating], content: params[:content]})
+  erb :review_update
+end
+
+# DELETE
+get "/reviews/:id/delete" do
+  @review = Review.find(params[:id]).delete
+  erb :college_delete
+end
+
+# SHOW
+get "/reviews/:id" do
+  @review = Review.find(params[:id])
+  erb :college_show
+end
+
