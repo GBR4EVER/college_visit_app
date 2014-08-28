@@ -39,5 +39,3 @@ get "/colleges/:id" do
   @college = College.find(params[:id])
   erb :"College/college_show"
 end
-
-# Checking to see if git is working correctly.

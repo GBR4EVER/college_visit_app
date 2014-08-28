@@ -26,14 +26,13 @@ write methods for the object's class (College).
 </h1>
 
 
-<% @all_colleges.each do |c| %>
+<% @all_reviews.each do |r| %>
 	<%#
 	 So here, `c` is a User object (meaning it's an *instance* of the
 	 User class). So we can run *instance* methods on `c`.
 	%>
 <p>
-	<a href= "/colleges/<%= c.college_id %>"><%= c.rating %></a>	
+	<a href= "/reviews/<%= r.review_id %>"><%= r.content %></a>	
 </p>
 
 <% end %>
-
