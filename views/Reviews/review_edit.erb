@@ -1,0 +1,14 @@
+<h1>Edit Student</h1>
+
+<form action="/reviews/<%= @review.id %>/update" method="post">
+	<p>Rating: 
+		<input type="text" name="rating">
+	</p>
+	
+	<p>Brief Review: 
+		<input type="text" name="content">
+	</p>
+	
+	<input type="submit">
+</form>
+

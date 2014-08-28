@@ -1,0 +1,12 @@
+<% if @review.valid? %>
+<h1>Success!</h1>
+
+<p>You Made a new review for the school <%= @college.school %></p>
+
+<a href="/reviews/index">Return to the review list</a>
+
+<% else %>
+
+<a href="/reviews/new">PlEASE RETURN and enter the fields correctly.</a>
+
+<% end %>

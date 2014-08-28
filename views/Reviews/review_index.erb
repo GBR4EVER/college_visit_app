@@ -11,28 +11,14 @@ body {
 }
 </style>
 
-<%#
 
-@all_colleges contains an Array of User objects. Remember that a User object
-contains mirrored info from one row in the "users" database table.
-
-The benefit of storing the info from each row in an object is that we can
-write methods for the object's class (College).
-
-%>
-
-<h1>
-	<a href="/colleges/new">Add new college</a>
-</h1>
+<h1><a href="/reviews/new">Add new review</a></h1>
 
 
 <% @all_reviews.each do |r| %>
-	<%#
-	 So here, `c` is a User object (meaning it's an *instance* of the
-	 User class). So we can run *instance* methods on `c`.
-	%>
+
 <p>
-	<a href= "/reviews/<%= r.review_id %>"><%= r.content %></a>	
+	<a href= "/reviews/<%= r.review_id %>"><%= r.rating %></a>	
 </p>
 
 <% end %>

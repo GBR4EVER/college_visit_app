@@ -1,0 +1,10 @@
+<h1><% @review.id %> Details</h1>
+
+<body>
+	<ul>Rating: <%= @review.rating %></ul>
+	<ul>Brief Review: <%= @review.content %></ul>
+</body>
+
+<a href="/reviews/<%= @review.id %>/edit">Edit this review.</a>
+
+<a href="/reviews/<%= @review.id %>/delete">Delete this review.</a>

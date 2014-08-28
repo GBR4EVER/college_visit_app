@@ -21,9 +21,7 @@ write methods for the object's class (College).
 
 %>
 
-<h1>
-	<a href="/colleges/new">Add new college</a>
-</h1>
+<h1><a href="/colleges/new">Add new college</a></h1>
 
 
 <% @all_colleges.each do |c| %>
@@ -32,7 +30,7 @@ write methods for the object's class (College).
 	 User class). So we can run *instance* methods on `c`.
 	%>
 <p>
-	<a href= "/colleges/<%= c.college_id %>"><%= c.rating %></a>	
+	<a href= "/colleges/<%= c.college_id %>"><%= c.school %></a>	
 </p>
 
 <% end %>

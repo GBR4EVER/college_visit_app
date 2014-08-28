@@ -105,8 +105,7 @@ binding.pry
 
 # INDEX
 get "/reviews/index" do
-  @review = Review.find(params[:id])
-  @all_reviews = @review.all
+  @all_reviews = Review.all
   erb :review_index
 end
 
@@ -146,3 +145,4 @@ get "/reviews/:id" do
   erb :college_show
 end
 
+binding.pry
